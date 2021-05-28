@@ -1,6 +1,6 @@
 const app = require("express")();
 const server = require("http").createServer(app);
-const { SSL_OP_NO_TICKET } = require("constants");
+
 const cors = require("cors");
 
 
@@ -33,4 +33,4 @@ socket.on("answercall",(data) => {
     io.to(data.to).emit("callaccepted",data.signal);
 });
 });
-server.listen(PORT,() =>console.log('Server listening on port'));
+server.listen(PORT,() =>console.log('Server listening on port ${PORT}'));
